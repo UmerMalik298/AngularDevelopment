@@ -1,0 +1,6 @@
+.shell { display:flex; min-height:100vh; }
+.side { width:220px; padding:16px; border-right:1px solid #ddd; }
+.main { flex:1; padding:16px; }
+.link { display:block; padding:10px 8px; border-radius:8px; text-decoration:none; color:#111; }
+.link.active { background:#eee; }
+.brand { margin:0 0 14px 0; }
