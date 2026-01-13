@@ -27,4 +27,8 @@ export class Api {
   getUsers(): Observable<any> {
     return this.http.get<any>(`${this.baseUrl}/users`);
   }
+
+  getCarts(): Observable<any> {
+    return this.http.get<any>(`${this.baseUrl}/carts`)
+  }
 }
