@@ -1,3 +1,32 @@
-<h1>This is working</h1>
-<p>carts works!</p>
+<h2 class="title">Carts</h2>
 
+<div class="toolbar">
+  <input
+    class="search"
+    type="text"
+    placeholder="Search by cart id"
+    [(ngModel)]="searchText"
+  />
+</div>
+
+<p *ngIf="loading" class="state">Loading...</p>
+<p *ngIf="error" class="error">{{ error }}</p>
+
+<ul *ngIf="!loading && !error" class="cart-list">
+  <li *ngFor="let c of filteredCarts" class="cart-card">
+    <div class="cart-head">
+      <b>Cart ID: {{ c.id }}</b>
+      <span class="pill">Items: {{ c.totalProducts }}</span>
+    </div>
+
+    <div class="cart-row">
+      <span class="label">Total</span>
+      <span class="value">{{ c.total }}</span>
+    </div>
+
+    <div class="cart-row">
+      <span class="label">Quantity</span>
+      <span class="value">{{ c.totalQuantity }}</span>
+    </div>
+  </li>
+</ul>

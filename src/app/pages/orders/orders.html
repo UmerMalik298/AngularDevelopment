@@ -1,11 +1,27 @@
-<h2>Users</h2>
+<h2 class="title">Orders</h2>
 
-<p *ngIf="loading">Loading...</p>
-<p *ngIf="error">{{ error }}</p>
+<div class="toolbar">
+  <input
+    class="search"
+    type="text"
+    placeholder="Search order by id"
+    [(ngModel)]="searchText"
+  />
+</div>
 
-<ul *ngIf="!loading && !error">
-  <li *ngFor="let u of users">
-    <b>{{ u.firstName }} {{ u.lastName }}</b><br />
-    <span>{{ u.email }}</span>
+<p *ngIf="loading" class="state">Loading...</p>
+<p *ngIf="error" class="error">{{ error }}</p>
+
+<ul *ngIf="!loading && !error" class="list">
+  <li *ngFor="let u of filteredOrders" class="card">
+    <div class="head">
+      <b>Id: {{ u.id }}</b>
+    </div>
+
+    <div class="name">
+      <b>{{ u.firstName }} {{ u.lastName }}</b>
+    </div>
+
+    <div class="email">{{ u.email }}</div>
   </li>
 </ul>
