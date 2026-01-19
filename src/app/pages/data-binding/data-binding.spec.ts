@@ -1,6 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { DataBinding } from './data-binding';
+import { FormsModule } from '@angular/forms';
 
 describe('DataBinding', () => {
   let component: DataBinding;

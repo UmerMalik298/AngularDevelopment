@@ -1,0 +1,62 @@
+<p>data-binding works!</p>
+<p>Your project is: {{ project }}</p>
+<p>Your experience is: {{ experience }} years</p>
+
+<input
+  type="text"
+  [(ngModel)]="project"
+  placeholder="Enter your project name"
+/>
+<br />
+<p> This is my name which is displayed using signals and interpolation {{name()}} </p>
+
+<br />
+
+<h2>
+    {{number()}}
+</h2>
+
+<button (click)="increment()">Increment</button>
+<button (click)="decrement()">Decrement</button>
+<br>
+<button  (click)="reset()"> Reset</button>
+
+<br>
+<br>
+
+
+<div class="row">
+<div class="col-4">
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th> id </th>
+            <th> Name </th>
+            <th> Age </th>
+            <th>Status</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        @for (item of StudentList; track $index) {
+
+        <tr>
+            <td> {{$index+1}} </td>
+            <td> {{item.name}} </td>
+            <td>{{item.age}}</td>
+            <!-- <td>{{item.status ? 'Active': 'De-Active'}}</td> -->
+            @if (item.status == true ) {
+                <h6>Active</h6>
+            }
+            @else {
+                <span>De-Active</span>
+            }
+        </tr>
+    }
+    </tbody>
+</table>
+
+</div>
+</div>
+
